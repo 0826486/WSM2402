@@ -6,10 +6,10 @@ li {
     background-color:khaki;
 }
 
-ul > ul > li {
+ul > ul > li {      /* ul 자식 ul 자식 li에 적용 */
     background-color: lightpink;
 }
-ul > li {
+ul > li {       /* ul 바로 아래 자식 li에 적용 */
     background-color:lightcyan;
 }
 
@@ -46,7 +46,7 @@ li:nth-child(2n){       /* 짝수번째인데 li인 아이 (시험문제) */
     background-color:lightblue;
 }
 
-h1,h3 {
+h1,h3 {     /* h1과 h3에 모두 적용 */
     /* background-color: bisque; */
 }
 
