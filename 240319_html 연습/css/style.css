@@ -1,3 +1,59 @@
 h1 {
     color:#333333;
 }
+
+li {
+    background-color:khaki;
+}
+
+ul > ul > li {
+    background-color: lightpink;
+}
+ul > li {
+    background-color:lightcyan;
+}
+
+.Korea {
+    color:hotpink;
+}
+
+.incheon {
+    color:forestgreen;
+}
+
+.Japan {
+    color:firebrick;
+}
+
+#leader {
+    color:gold;
+}
+
+li:first-child {    /* 첫째인데 li인 아이 */
+    font-weight: bold;
+}
+
+li:last-child {     /* 막내인데 li인 아이 */
+    font-style: italic;
+    color:green;
+}
+
+li:nth-child(3){
+    color:red;
+}
+
+li:nth-child(2n){       /* 짝수번째인데 li인 아이 (시험문제) */
+    background-color:lightblue;
+}
+
+h1,h3 {
+    /* background-color: bisque; */
+}
+
+h1 + h2 {               /* h1과 h3는 자매여야 함. h1 바로 아랫자매 h3여야함. */
+    background-color:mistyrose;
+}
+
+h1 ~ h2 {       /* h1과 h3 자매여야함. h1 아랫자매 모든 h3에 적용 */
+    background-color:white;
+}
