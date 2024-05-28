@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click 예제</title>
+</head>
+<body>
+    <button id="btn">누르라해!</button>
+    <script>
+        const displayClicked = () => {
+            console.log("눌렸다해!");
+        }
+        
+        document.getElementById("btn").oneclick = displayClicked;
+    </script>
+</body>
+</html>
