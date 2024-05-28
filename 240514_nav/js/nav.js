@@ -21,7 +21,7 @@ const toggleMenu = () => {
     const toggleI = navToggleDiv.getElementsByTagName("i")[0]; // .nav-toggle > <i> 가져오자
 
     navToggleDiv.onclick = () => {
-        // class에 show-menu를 붙이거나/떄자
+        // class에 show-menu를 붙이거나/떼자
         navListUl.classList.toggle("show-menu");
 
         // toggle icon 바꾸자: bi-list <-> bi-x-lg
