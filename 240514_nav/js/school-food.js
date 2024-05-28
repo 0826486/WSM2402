@@ -6,7 +6,7 @@ const displayDate = () => {
     // 요일을 나타내는 문자열을 선언
     let days = "일월화수목금토";
     // 현재 월 가져오기 (month는 0부터 시작이라, +1을 해줘야 함)
-    let month = currentDate.getMonth() +1;
+    let month = currentDate.getMonth() + 1;
     // 현재 날짜 가져오기
     let date = currentDate.getDate();
     // 현재 요일 가져오기 (0: 일요일, 1: 월요일)
