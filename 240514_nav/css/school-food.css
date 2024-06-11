@@ -27,7 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 80px;       /* 열 사아의 간격 주기 */
+    column-gap: 80px;       /* 열 사이의 간격 주기 */
     row-gap: 40px;
 }
 
@@ -85,4 +85,4 @@
     .menu-food {
         width: 50%;
     }
-}
+}   
