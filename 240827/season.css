@@ -1,0 +1,31 @@
+.container {
+    width: 800px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 30% 70%; /* repeat(2,50%)*/ /* repeat(2,1fr) */ /* 50%, 50% */
+    grid-template-rows: 4fr 6fr;
+}
+
+.item {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    place-items: center;
+}
+
+.item:first-child {
+    background-color: yellow;
+}
+
+.item:nth-child(2){
+    background-color: aqua;
+}
+
+.item:nth-child(3) {
+    background-color: burlywood;
+}
+
+.item:last-child {
+    background-color: whitesmoke;
+}
