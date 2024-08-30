@@ -1,0 +1,26 @@
+.container {
+    width: 600px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(6, 25%);
+    /* grid-template-rows: ; */
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day {
+    color: white;
+    background-color: pink;
+}
+
+.one {
+    color: pink;
+}
+
+.conbine {
+    grid-area: 2/3/4/3;
+}
