@@ -67,10 +67,10 @@ const setCalendar = (date) => {
     // 이전 달 뒷날짜 구하기
     // ? ~ 이전 달 마지막 날짜 ?: 이전 달 마지막 날짜 - 이번 달 첫날의 요일 + 1
     for (let date = prevMonthLastDate.getDate() - firstDay + 1; date <= prevMonthLastDate.getDate(); date++) {
-        let currentMonthDateDiv = document.createElement("div");   // <div></div>
-        currentMonthDateDiv.className = "item other-month";     // <div class="item other-month"></div>
-        currentMonthDateDiv.textContent = date;                 // <div class="item other-month">1</div>
-        calendarContainerDiv.appendChild(currentMonthDateDiv);  // <div id="calendar-container"><div class="item">1</div></div>
+        let prevMonthDateDiv = document.createElement("div");   // <div></div>
+        prevMonthDateDiv.className = "item other-month";     // <div class="item other-month"></div>
+        prevMonthDateDiv.textContent = date;                 // <div class="item other-month">1</div>
+        calendarContainerDiv.appendChild(prevMonthDateDiv);  // <div id="calendar-container"><div class="item">1</div></div>
     }
 
     // 이번 달 날짜들 쓰자 : 1~30 : 1 ~ lastDate.getDate()
