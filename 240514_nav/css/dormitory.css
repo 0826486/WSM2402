@@ -1,0 +1,4 @@
+main {
+    margin-top: calc(var(--nav-height) + 50px);
+    /* calc는 연산자 꼭 띄어쓰기가 필요함 */
+}
