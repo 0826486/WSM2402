@@ -43,11 +43,13 @@ main {
 }
 
 
-#calendar {
+#calendar,
+#selection-washingmachine-time {
     display: none;
 }
 
-#selection-washingmachine-time {
+#selection-washingmachine-time ,
+#selection-room-name {
     margin-top: 100px;
 }
 
@@ -56,7 +58,8 @@ main {
     column-gap: 20px;
 }
 
-#dormitory select {
+#dormitory select,
+#dormitory input {
     font-size: var(--h2-font-size);
     border: none;
     background-color: #f0f0f0;
