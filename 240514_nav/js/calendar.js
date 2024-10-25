@@ -44,7 +44,7 @@ const setCalendar = (date) => {
 
     // 마지막 날의 요일 구하기 : 다음 달 앞 날짜 쓰기 위하여
     const lastDay = lastDate.getDay();
-    console.log(lastDay);
+    // console.log(lastDay);
     
     // 일월화수목금토
     // const weekNameString = `<div class = "item week-name">일</div>
