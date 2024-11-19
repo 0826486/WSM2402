@@ -3,6 +3,7 @@ let weeklyReservations;      // 미리 정해진 요일별 예약 데이터
 let newReservation;         //사용자가 새롭게 지금 입력하는 예약정보. 1페이지에서 초기화 하자
 let reservations = [];           //사용자가 에약한 정보들의 덩어리
 
+
 // selection-item 요소 가져오기
 const selectionItemDivs = document.getElementsByClassName("selection-item");
 
@@ -66,10 +67,19 @@ const setPage = (page) => {
     // show pageDiv 1
     pageDivs[page-1].style.display = "block";
 
-    if(page === 2) {        //시간 선택 : 세탁기, 시간
+    if(page === 1) {
+        // localstorage에 저장한 예약들 가져오기
+        const storeReservations = localStorage.getItem("reservations");
+        if (storeReservations) {
+            reservations = JSON.parse(storeReservations);   // string -> JSON
+            reservations.map((reservation) => reservation.date = new Date(reservation.date));     // .date에 저장된 string -> Date 객체로 바꾸기
+        } else {      // 저장된 예약들이 없으면, (아예 예약 완료 버튼 안 눌렀을 때, 처음이란 설레는 말)
+            reservations = [];
+        }
+    }   else if (page === 2) {        //시간 선택 : 세탁기, 시간
         initWashingmachineTime();
     }
-    else if(page === 3) {   //호실 이름
+    else if(page === 3) {   // 호실 이름
         // 세탁기 번호, 시간 보관하기
         newReservation.washingmachine = washingmachineSelect.value;   // 세탁기 option에서 사용자가 선택한 세탁기의 value 속성값을 가져오기
         newReservation.time = timeSelect.value;
@@ -141,7 +151,19 @@ const initWashingmachineTime = () => {
         }
     });
 
-    // TODO : 사용자가 예약한 내용도 위의 것을 다 파악해서 빼자
+    // 사용자가 예약한 내용도 위의 것을 다 파악해서 빼자
+    reservations.forEach((reservation) => {
+        // 사용자가 예약한 날짜와 지금 입력하고 있는 새로운 예약의 날짜가 같으면, 그 세탁기 번호의 그 시간 빼기
+        if(reservation.date.getFullYear() == newReservation.date.getFullYear()
+        && reservation.date.getMonth() == newReservation.date.getMonth()
+        && reservation.date.getDate() == newReservation.date.getDate()) {
+            const { washingmachine, time} = reservation;
+            const index = allWashingmachineTime[washingmachine].indexOf(String(time));  //1 -> "1"
+            if(index > -1) {    //예약된 시간 찾았다면
+                allWashingmachineTime[washingmachine].splice(index, 1); //그 시간 빼자
+            }
+        }
+    });
     
     //select 들 : (세탁기 번호, 시간들) 만들자
     washingmachineSelect.innerHTML = "";    // 세탁기 option 없애자
@@ -224,4 +246,11 @@ const initTable = () => {
         `;
     });
     boardContainerDiv.innerHTML = itemString;   // string -> 표에 표시하기
+}
+
+const saveReservations = () => {
+    // 원래는 백엔드에 reservations 정보를 넘겨서 데이터 베이스에 저장해야 함, 3학년 유병석 / 박지우 / 신혜정 선생님에게 배움
+    // 그냥 로컬에 기록해 둘 것임, LocalStorage 라는 친구
+    alert("예약 완료");
+    localStorage.setItem("reservations", JSON.stringify(reservations)); // 예약들을 저장하기 JSON -> string
 }
